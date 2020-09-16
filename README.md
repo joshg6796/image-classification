@@ -1,5 +1,5 @@
 # Image Classification
-Image classification using [TensorFlowJS](https://www.tensorflow.org/js) by file upload or by webcam streaming. The [MobileNet](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet) model is used to classify the image element and the streaming video element.
+Image classification using [TensorFlowJS](https://www.tensorflow.org/js) and Angular 10 by file upload or by webcam streaming. The [MobileNet](https://github.com/tensorflow/tfjs-models/tree/master/mobilenet) model is used to classify the image element and the streaming video element.
 
 File upload:
 
