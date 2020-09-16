@@ -11,7 +11,6 @@ export class AppComponent implements OnInit {
   title = 'image-classification';
 
   model;
-  loading: boolean;
   isVideo: boolean;
   isImage: boolean;
   imgSrc: string;
@@ -20,13 +19,11 @@ export class AppComponent implements OnInit {
   predictions: Prediction[];
 
   ngOnInit(){
-    this.loading = true;
     console.log('loading mobilenet model...');
     tf.setBackend('cpu').then(async () => {
       this.model = await mobilenet.load();
     });
     console.log('Sucessfully loaded model');
-    this.loading = false;
   }
 
   streamVideo(){
