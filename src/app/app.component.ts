@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   model;
   loading: boolean;
   isVideo: boolean;
+  isImage: boolean;
   imgSrc: string;
   @ViewChild('img') imageEl: ElementRef;
   @ViewChild('video') video: ElementRef;
@@ -29,6 +30,7 @@ export class AppComponent implements OnInit {
   }
 
   streamVideo(){
+    this.isImage = false;
     this.isVideo = true;
     if (navigator.mediaDevices.getUserMedia) {
       navigator.mediaDevices.getUserMedia({ video: true })
@@ -58,6 +60,7 @@ export class AppComponent implements OnInit {
       reader.readAsDataURL(file);
 
       reader.onload = (res: any) => {
+        this.isImage = true;
         this.imgSrc = res.target.result;
         setTimeout(async () => {
           this.predictions = await this.model.classify(this.imageEl.nativeElement);

@@ -14,13 +14,9 @@
     <video autoplay playsinline muted id="webcam" width="300" height="300" #video></video>
   </div>
 
-  <div *ngIf="loading; else elseBlock">
-      <img src="./assets/loading.gif">
-  </div>
-
-  <ng-template #elseBlock>
+  <div *ngIf="isImage===true">
     <img [src]="imgSrc" #img *ngIf="imgSrc"/>
-  </ng-template>
+  </div>
 
   <div class="list-group">
     <div class="list-group-item" *ngFor="let prediction of predictions">
